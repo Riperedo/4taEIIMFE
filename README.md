@@ -27,7 +27,7 @@ save_data("sdk.dat", [k S])
 y podemos graficar en gnuplot escribiendo simplemente
 
 ```gnuplot
-gnuplot> plot "sdk.dat" w l t "Estructura"
+gnuplot> plot "sdk.dat" w l lw 3 lc rgb "red"
 ```
 
 ![Fig](img/sdk.png)
