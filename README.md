@@ -1,5 +1,5 @@
 ![logo](img/logo.png)
-# 4taEIIMFE
+# 4ta EIIMFE Ed. 2022
 
 Repositorio para los talleres de teoría de líquidos y la [Self-Consistent Generalized langevin Equation(SCGLE)](https://doi.org/10.1103/PhysRevE.62.3395) de la [4ta EIIMFE](https://sites.google.com/view/lanimfe/eventos/iv-escuela-internacional).
 
