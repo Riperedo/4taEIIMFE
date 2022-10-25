@@ -10,12 +10,13 @@ Este repositorio está escrito principalmente en [Julia](https://julialang.org) 
 La ejecución de los códigos es sumamente sencilla y pretende ser una herramienta introductoria para la SCGLE. Un ejemplo de esto lo encontramos en el cálculo de la estructura de un sistema de esferas duras.
 
 ```julia
+include("src\\SCGLE_API.jl")
 # Grid en el vector de onda
 kₘᵢₙ = 0.0
 kₘₐₓ = 15*π
 N = 1000
 # Parámetros físicos
-phi = 0.4
+ϕ = 0.4
 I = Input_HS(kₘᵢₙ, kₘₐₓ, N, ϕ, VW = true)
 # Factor de estructura estático
 k = vector_de_onda(I)
