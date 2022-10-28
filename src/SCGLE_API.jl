@@ -54,6 +54,7 @@ end
 # Constructores
 vector_de_onda(I::Input_SCGLE) = I.G.x
 estructura(I::Input_SCGLE) = I.S
+estructura_DHS(I::Input_SCGLE) = I.S[1], I.S[2], I.S[3]
 fraccion_de_volumen(I::Input_SCGLE) = I.L.ϕ[1]
 temperatura(I::Input_SCGLE) = I.L.T
 """
@@ -97,3 +98,18 @@ function SCGLE(I::Input_SCGLE, k_max; dt = 1e-10::Real, nT = 6::Integer, decimac
 	if flag println(" ¡Listo!") end
 	return τ, Fs, F, Δζ, Δη
 end
+
+
+"""
+Regresa la estructura de esferas duras dipolares
+"""
+function Input_DHS(kₘᵢₙ::Real, kₘₐₓ::Real, N::Integer, ϕ::Real, Temp::Real)
+	G = Grid(kₘᵢₙ, kₘₐₓ, N)
+	L = Liquid()
+	L.setDistribution([ϕ], [1.0], phi = true)
+	L.T = Temp
+	S⁰⁰, S¹⁰, S¹¹ = SF(L, G, dd, VerletWeis = true)
+	return Input_SCGLE(L, G, [S⁰⁰, S¹⁰, S¹¹])
+end
+
+print("Hola")
